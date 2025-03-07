@@ -1,5 +1,25 @@
 # SOC-CloudLab
 
+## Objective
+Design and implement a Cloud SOC environment by deploying and configuring key security infrastructure components. This includes setting up ELK instances for centralized logging, deploying Windows and Linux servers to allow controlled brute-force attempts for log generation and rule development, and integrating Fleet Server with Elastic Agents for comprehensive monitoring. Additionally, deploy a Mythic Server to simulate various attack scenarios, establish an osTicket server integrated with Elasticsearch for streamlined alerting, and develop detection rules and alerts for identifying brute-force attacks on RDP and SSH.
+
+## Network Diagram
+
+![2025-03-07 10_07_55-SEC ANALYST drawio - draw io](https://github.com/user-attachments/assets/9bc9737c-75ac-49b3-bd72-512ae1d96d98)
+
+## Deployed a Cloud SOC Environment through VULTR
+
+![2025-03-07 10_08_54-Products - Vultr com](https://github.com/user-attachments/assets/68cda85e-0114-4bd6-a45d-c810017b646f)
+
+### Skills Learned
+- Configured a Virtual Private Cloud (VPC) environment to ensure secure, isolated communication between SOC components
+- Configured Fleet Server and deployed Elastic Agents on Windows and Linux servers for comprehensive system monitoring and log forwarding
+- Deployed and configured Elasticsearch, Logstash, and Kibana (ELK) for centralized log aggregation
+- Designed and implemented a cloud-based Security Operations Center (SOC) to enhance threat monitoring and response capabilities.
+
+### Tools Used
+- Vultr, ELK, osTicket, Linux, Windows
+  
 ## Deploy ELK instances (ElasticSearch & Kibana)
 Download Elasticsearch & Kibana through the wget command on our Ubuntu Server
 - Modify Elasticsearch and Kibana configuration files to allow access from our laptop instead of restricting it to localhost
