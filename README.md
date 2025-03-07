@@ -21,6 +21,72 @@ Resolved the "Failed to Retrieve Detection Engine Privileged" error by generatin
 ![2025-03-06 09_29_01-root@ELK-CLOUD_ _usr_share_kibana_bin](https://github.com/user-attachments/assets/59ec4d91-e14a-4a5c-89d1-3035275bff18)
 ![2025-03-06 09_29_36-Alerts - Kibana](https://github.com/user-attachments/assets/1ecc0b55-e7ff-49dd-bf57-80796fe02b51)
 
+## Deploy Window & Linux Server with no Firewall (generate Sysmon logs in Window Server)
+- I want to allow brute-force attempts on my system to generate logs, create alerts, and develop rules for detecting brute-force attacks on RDP and SSH in the future
+
+Download Sysmon & Olaf raw configuration file on my Window Server
+- Injest data into ElasticSearch by adding the integration into the Window Policy for Sysmon and Window Defender Logs(1116/1117/5001)
+
+![2025-03-06 10_07_29-155 138 163 229 - Remote Desktop Connection](https://github.com/user-attachments/assets/cf931f6d-64b8-4de8-949e-df6af29b02ec)
+![2025-03-06 10_25_46-window-policy - Agent policies - Fleet - Elastic](https://github.com/user-attachments/assets/0c8d333e-1bf8-4905-8323-64a6f5b83ea5)
+
+## Deploy Fleet Server & Install Elastic Agents on Window/Linux Server
+Fleet Server makes my life easier by managing mulitple Elastic Agents within a centralized location
+- easy to update agent policies
+- Elastic Agent uses port 8220 to communicate to the Fleet Server
+
+![2025-03-06 09_54_29-noVNC (WINDOW-SERVER) - ID ae1f9a39-c62c-40c6-a618-8aec77ddc727](https://github.com/user-attachments/assets/967ed940-12df-4aaf-933a-2f63097bbebc)
+![2025-03-07 09_39_47-Agents - Fleet - Elastic](https://github.com/user-attachments/assets/1656dcfb-4389-4c71-8a1e-178343540420)
+
+## Deploy a Mythic Server to simulate various attacks on my other systems.
+I'll be creating another repository on setting up Mythic C2 attacks, detecting them, and creating alerts.
+
+## Deploy an osTicket server and integrate it with ElasticSearch
+Download XAMPP & configure configuration files 
+- allow Window Defender to allow inbound port connection to 80/443
+- start Apache & SQL Server to go into Phpmyadmin (modify root/pma user accounts)
+
+![2025-03-06 17_57_47-45 63 64 202 - Remote Desktop Connection](https://github.com/user-attachments/assets/60d8a4da-4e20-4ea6-ba46-76fb4dc59837)
+![2025-03-06 18_11_30-45 63 64 202 - Remote Desktop Connection](https://github.com/user-attachments/assets/17d18567-8232-4b0c-a073-3dbd780f630b)
+
+Download OSTICKET 
+- create a osTicket database under PHPMYADMIN
+- create helpdesk admin/user/pass on osTicket
+
+![2025-03-06 19_29_54-45 63 64 202 - Remote Desktop Connection](https://github.com/user-attachments/assets/ca94436f-52d5-4fd1-a92a-a7ff0b2689cc)
+![2025-03-06 19_33_58-45 63 64 202 - Remote Desktop Connection](https://github.com/user-attachments/assets/587edc39-ec12-4566-b18a-ac9cf0f313b5)
+
+Add a Webhook Connector to the Elastic Agent to integrate osTicket with the ELK stack
+- create a API key on osTicket
+- edit the domain and key in the Webhook to match our private VPC osTicket configuration.
+
+![2025-03-06 19_38_03-osTicket __ Admin Control Panel](https://github.com/user-attachments/assets/24401d1d-e0be-420d-b58d-ec9e5c22d8de)
+![2025-03-06 19_54_15-Connectors - Elastic](https://github.com/user-attachments/assets/a8652ddf-28b8-468e-8b2e-dd6da70bc5d4)
+
+## Add Elastic Defend (EDR) onto the Window Server 
+Able to protect endpoints from malicious activity and isolate host
+
+![2025-03-07 09_58_46-Endpoints - Kibana](https://github.com/user-attachments/assets/94cf196d-e139-4130-833c-1b797ce53682)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
